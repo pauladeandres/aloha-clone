@@ -18,40 +18,49 @@
 
 <body class="font-body">
     <div class="banner fixed w-full">
-        <h6 class="text-center uppercase text-sm py-2 bg-white">Free delivery in the EU - Free returns</h6>
+        <h6 class="text-center uppercase text-xs py-2 bg-white">Free delivery in the EU - Free returns</h6>
     </div>
     <header>
-        <div class="grid grid-cols-3 px-6 py-10">
-            <div class="self-center justify-start">
-                <i class="icon fab fa-instagram fa-lg px-2"></i>
-                <i class="icon fab fa-pinterest fa-lg px-2"></i>
-                <i class="icon fab fa-facebook-square fa-lg px-2"></i>
+        <div class="grid grid-cols-2 sm:grid-cols-3 px-6 py-10">
+            <div class="self-center justify-start hidden sm:block">
+                <i class="social-icon fab fa-instagram fa-lg px-2"></i>
+                <i class="social-icon fab fa-pinterest fa-lg px-2"></i>
+                <i class="social-icon fab fa-facebook-square fa-lg px-2"></i>
             </div>
+
             <div class="justify-self-center">
                 <img class="logo" src="./img/logo.png" alt="logo" />
             </div>
-            <div class="self-center justify-self-end">
-                <i class="icon fas fa-search fa-lg px-2"></i>
-                <i class="icon fas fa-user-alt fa-lg px-2"></i>
-                <i class="icon far fa-eye fa-lg px-2"></i>
-                <i class="icon fas fa-heart fa-lg px-2"></i>
-                <i class="icon fas fa-shopping-cart fa-lg px-2"></i>
+
+            <div class="flex self-center justify-self-end">
+                <span class="text-xs hidden sm:inline font-light pr-4">ES (€)</span>
+                <div class="flex">
+                    <i class="icon fas fa-search fa-lg px-2"></i>
+                    <i class="icon fas fa-user-alt fa-lg px-2"></i>
+                </div>
+                <div class="flex">
+                    <i class="icon hidden md:inline far fa-eye fa-lg px-2"></i>
+                    <i class="icon hidden md:inline fas fa-heart fa-lg px-2"></i>
+                    <i class="icon fas fa-shopping-cart fa-lg px-2"></i>
+                    <i class="icon md:hidden fas fa-bars fa-lg px-2"></i>
+                </div>
             </div>
         </div>
-        <nav class="px-32">
-            <ul class="flex text-sm">
-                <li class="flex-grow place-content-center"><a href="#">BAJO DEMANDA/30% DE DESCUENTO</a></li>
-                <li class="flex-grow place-content-center"><a href="#">TIENDA ></a></li>
-                <li class="flex-grow place-content-center">ENVIO EN 48H</li>
-                <li class="flex-grow place-content-center">TOP VENTAS</li>
-                <li class="flex-grow place-content-center">PROXIMA TEMPORADA</li>
-                <li class="flex-grow place-content-center">CONSIGUE 20€ DE DESCUENTO</li>
-                <li class="flex-grow place-content-center">MARCAS ></li>
+        <nav class="px-32 hidden md:block">
+            <ul class="flex flex-wrap text-sm text-center">
+                <li class="flex-grow place-content-center my-2"><a href="#">BAJO DEMANDA/30% DE DESCUENTO</a></li>
+                <li class="flex-grow place-content-center my-2"><a href="#">TIENDA ></a></li>
+                <li class="flex-grow place-content-center my-2">ENVIO EN 48H</li>
+                <li class="flex-grow place-content-center my-2">TOP VENTAS</li>
+                <li class="flex-grow place-content-center my-2">PROXIMA TEMPORADA</li>
+                <li class="flex-grow place-content-center my-2">CONSIGUE 20€ DE DESCUENTO</li>
+                <li class="flex-grow place-content-center my-2">MARCAS ></li>
             </ul>
         </nav>
         <div class="text-center pb-10">
-            <h3 class="text-primary text-xl py-8">COMPRAS RESPONSABLES</h3>
-            <p>Disfruta de un descuento anticipado de hasta el 30% por comprar de forma responsable y esperar un poco
+            <h3 class="text-primary text-sm sm:text-lg pt-8">COMPRAS RESPONSABLES</h3>
+            <p class="text-sm sm:text-lg">Disfruta de un descuento anticipado de hasta el 30% por comprar de forma
+                responsable y esperar un poco
                 más por un producto mejor. Las cosas buenas necesitan su tiempo y tú lo sabes</p>
         </div>
     </header>
@@ -89,9 +98,9 @@
         </section>
     </main>
 </body>
-<footer class="grid grid-cols-4 py-10 px-10 text-xs">
+<footer class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 py-10 px-10 text-xs">
     <div class="uppercase px-2">
-        <h6 class="text-black">ALOHAS</h6>
+        <h6 class="text-black pt-4">ALOHAS</h6>
         <hr class="my-4">
         <div class="font-thin text-xs">
             <p>¿por qué alohas?</p>
@@ -113,7 +122,7 @@
         </div>
     </div>
     <div class="px-2">
-        <h6 class="text-black">POLITICAS DE LA MARCA</h6>
+        <h6 class="text-black pt-4">POLITICAS DE LA MARCA</h6>
         <hr class="my-4">
         <div class="font-thin text-xs">
             <p>BUSCAR</p>
@@ -124,22 +133,20 @@
         </div>
     </div>
     <div class="px-2">
-        <h6 class="text-black">NEWSLETTER</h6>
+        <h6 class="text-black pt-4">NEWSLETTER</h6>
         <hr class="my-4">
         <div class="font-thin text-xs">
             <p>Suscríbete a nuestra newsletter y sé el primero en conocer las nuevas colecciones, promociones especiales
-                e
-                inspiración
-                de estilo.</p>
+                e inspiración de estilo.</p>
         </div>
-        <div class="relative ">
+        <div class="block">
             <input class="border border-black px-2 py-1" type="text">
-            <input type="submit" class="uppercase bg-black text-white px-2 py-1 absolute inset-y-0 right-0"
-                name="subscribe" id="subscribe" value="ÚNETE">
+            <input type="submit" class="uppercase bg-black text-white px-2 py-1" name="subscribe" id="subscribe"
+                value="ÚNETE">
         </div>
     </div>
     <div class="px-2">
-        <h6 class="text-black">ATENCIÓN AL CLIENTE</h6>
+        <h6 class="text-black pt-4">ATENCIÓN AL CLIENTE</h6>
         <hr class="my-4">
         <div class="font-thin text-xs">
             <p>Lun - Jue | 9:00 a 18:00 (CET)</p>

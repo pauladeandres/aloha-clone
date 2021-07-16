@@ -8,15 +8,20 @@ body {
     color: rgb(84, 84, 84);
 }
 
+.social-icon {
+    color: rgb(84, 84, 84);
+}
 .icon {
     color: rgb(84, 84, 84);
 }
-
+.hide {
+    display: none;
+}
 .logo {
     width: 240px;
 }
 .image-container {
-    height: 450px;
+    height: 250px;
 }
 .banner {
     z-index: 100000;
@@ -36,4 +41,9 @@ footer p{
     padding: 6px 0px
 }
 
+@media screen and (min-width: 640px) {
+   .image-container {
+    height: 600px;
+}
+}
 
