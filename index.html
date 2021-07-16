@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer src="https://unpkg.com/alpinejs@3.2.1/dist/cdn.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/460a9dce39.js" crossorigin="anonymous"></script>
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
+    <title>ALL ALOHAS</title>
+</head>
+
+<body class="font-body">
+    <div class="banner fixed w-full">
+        <h6 class="text-center uppercase text-sm py-2 bg-white">Free delivery in the EU - Free returns</h6>
+    </div>
+    <header>
+        <div class="grid grid-cols-3 px-6 py-10">
+            <div class="self-center justify-start">
+                <i class="icon fab fa-instagram fa-lg px-2"></i>
+                <i class="icon fab fa-pinterest fa-lg px-2"></i>
+                <i class="icon fab fa-facebook-square fa-lg px-2"></i>
+            </div>
+            <div class="justify-self-center">
+                <img class="logo" src="./img/logo.png" alt="logo" />
+            </div>
+            <div class="self-center justify-self-end">
+                <i class="icon fas fa-search fa-lg px-2"></i>
+                <i class="icon fas fa-user-alt fa-lg px-2"></i>
+                <i class="icon far fa-eye fa-lg px-2"></i>
+                <i class="icon fas fa-heart fa-lg px-2"></i>
+                <i class="icon fas fa-shopping-cart fa-lg px-2"></i>
+            </div>
+        </div>
+        <nav class="px-32">
+            <ul class="flex text-sm">
+                <li class="flex-grow place-content-center"><a href="#">BAJO DEMANDA/30% DE DESCUENTO</a></li>
+                <li class="flex-grow place-content-center"><a href="#">TIENDA ></a></li>
+                <li class="flex-grow place-content-center">ENVIO EN 48H</li>
+                <li class="flex-grow place-content-center">TOP VENTAS</li>
+                <li class="flex-grow place-content-center">PROXIMA TEMPORADA</li>
+                <li class="flex-grow place-content-center">CONSIGUE 20€ DE DESCUENTO</li>
+                <li class="flex-grow place-content-center">MARCAS ></li>
+            </ul>
+        </nav>
+        <div class="text-center pb-10">
+            <h3 class="text-primary text-xl py-8">COMPRAS RESPONSABLES</h3>
+            <p>Disfruta de un descuento anticipado de hasta el 30% por comprar de forma responsable y esperar un poco
+                más por un producto mejor. Las cosas buenas necesitan su tiempo y tú lo sabes</p>
+        </div>
+    </header>
+    <main>
+        <section x-data="getProducts()" x-init="console.log(products)" class="grid grid-cols-2 md:grid-cols-4">
+            <template x-for="product in products" :key="product.id">
+                <div class="product-card justify-items-stretch relative" x-data="{visible: false}">
+                    <div class="discount-alert absolute z-40 right-0 top-0 w-35 h-35 px-4 py-3 text-xs"
+                        x-show="product.discount" x-text="'UP TO ' + product.percentage + '% OFF'">
+                    </div>
+                    <div class="vegan-alert absolute z-50 right-0 top-0 w-35 px-10 py-3 text-xs"
+                        x-show="product.isVegan"> VEGAN
+                    </div>
+                    <div class="image-container relative" @mouseover="visible = true">
+                        <img class="transition-opacity duration-700 ease-in-out object-cover h-full w-full absolute"
+                            x-show="visible" @mouseout="visible = false" x-bind:src="product.image2"
+                            x-bind:alt="product.name" />
+                        <img class="object-cover h-full w-full" x-bind:src="product.image" x-bind:alt="product.name" />
+                        <i class="favourite-icon far fa-heart fa-2x absolute bottom-0 right-0 px-2 py-2 hover:text-yellow-400"
+                            @click="alert('Add to favourites')">
+                        </i>
+                    </div>
+                    <div class="text-center py-6">
+                        <h6 x-text="product.name" class="text-lg">
+                        </h6>
+                        <span x-text="'€' + product.price "
+                            :class="product.discount ? 'text-gray-400 text-sm line-through' : 'text-gray-400 text-sm'">
+                        </span>
+                        <span class="discount-price text-xs" x-show="product.discount"
+                            x-text="'From €' + discountPrice(product.price, product.percentage)"></span>
+                        <span x-show="product.preOrder" class="uppercase text-green-600 text-sm">pre-order </span>
+                    </div>
+                </div>
+            </template>
+        </section>
+    </main>
+</body>
+<footer class="grid grid-cols-4 py-10 px-10 text-xs">
+    <div class="uppercase px-2">
+        <h6 class="text-black">ALOHAS</h6>
+        <hr class="my-4">
+        <div class="font-thin text-xs">
+            <p>¿por qué alohas?</p>
+            <p>sostenibilidad</p>
+            <p>alohas circle rewards</p>
+            <p>preguntas frecuentes (FAQ)</p>
+            <p>noticias</p>
+            <p>comentarios</p>
+            <p>únete a nuestro equipo</p>
+            <p>consulta wholesale</p>
+            <p>consulta mercado</p>
+            <p>refer a friend</p>
+            <p>press | influencers</p>
+            <p>afiliados</p>
+            <p>consulta proveedores</p>
+            <p>contacto</p>
+            <p>alohas chicas</p>
+            <p>live shopping events</p>
+        </div>
+    </div>
+    <div class="px-2">
+        <h6 class="text-black">POLITICAS DE LA MARCA</h6>
+        <hr class="my-4">
+        <div class="font-thin text-xs">
+            <p>BUSCAR</p>
+            <p>TÉRMINOS & CONDICIONES</p>
+            <p>POLÍTICA DE PRIVACIDAD & COOKIES</p>
+            <p>SUNSET VENTURES SLU</p>
+            <p>DEVOLUCIONES</p>
+        </div>
+    </div>
+    <div class="px-2">
+        <h6 class="text-black">NEWSLETTER</h6>
+        <hr class="my-4">
+        <div class="font-thin text-xs">
+            <p>Suscríbete a nuestra newsletter y sé el primero en conocer las nuevas colecciones, promociones especiales
+                e
+                inspiración
+                de estilo.</p>
+        </div>
+        <div class="relative ">
+            <input class="border border-black px-2 py-1" type="text">
+            <input type="submit" class="uppercase bg-black text-white px-2 py-1 absolute inset-y-0 right-0"
+                name="subscribe" id="subscribe" value="ÚNETE">
+        </div>
+    </div>
+    <div class="px-2">
+        <h6 class="text-black">ATENCIÓN AL CLIENTE</h6>
+        <hr class="my-4">
+        <div class="font-thin text-xs">
+            <p>Lun - Jue | 9:00 a 18:00 (CET)</p>
+            <p>Vie | 8:30 a 15:30 (CET)</p>
+            <p>Excluye los días festivos de Barcelona</p>
+            <p>Espera una respuesta en un plazo de 24-48 horas.</p>
+            <p>Esto puede cambiar en periodos claves.</p>
+        </div>
+    </div>
+</footer>
+<script type="text/javascript" src="./js/script.js"></script>
+
+</html>

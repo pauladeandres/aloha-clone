@@ -1,0 +1,15 @@
+{
+  "name": "alohaclone",
+  "version": "1.0.0",
+  "description": "aloha project test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paula de Andrés",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
+    "tailwindcss": "^2.2.4"
+  }
+}

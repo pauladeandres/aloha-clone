@@ -1,0 +1,39 @@
+/* ./src/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Josefin Sans';
+    color: rgb(84, 84, 84);
+}
+
+.icon {
+    color: rgb(84, 84, 84);
+}
+
+.logo {
+    width: 240px;
+}
+.image-container {
+    height: 450px;
+}
+.banner {
+    z-index: 100000;
+}
+.discount-price {
+    color: #c5aa76;
+}
+.discount-alert {
+    color: white;
+    background-color: #c5aa76;
+}
+.vegan-alert {
+    color: white;
+    background-color: rgb(202 204 168);
+}
+footer p{
+    padding: 6px 0px
+}
+
+
